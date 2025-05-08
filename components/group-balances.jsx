@@ -16,7 +16,6 @@ export function GroupBalances({ balances }) {
     );
   }
 
-  /* ───── helpers ───────────────────────────────────────────────────────── */
   const me = balances.find((b) => b.id === currentUser._id);
   if (!me) {
     return (
@@ -28,12 +27,10 @@ export function GroupBalances({ balances }) {
 
   const userMap = Object.fromEntries(balances.map((b) => [b.id, b]));
 
-  // Who owes me?
   const owedByMembers = me.owedBy
     .map(({ from, amount }) => ({ ...userMap[from], amount }))
     .sort((a, b) => b.amount - a.amount);
 
-  // Whom do I owe?
   const owingToMembers = me.owes
     .map(({ to, amount }) => ({ ...userMap[to], amount }))
     .sort((a, b) => b.amount - a.amount);
@@ -46,7 +43,6 @@ export function GroupBalances({ balances }) {
   /* ───── UI ────────────────────────────────────────────────────────────── */
   return (
     <div className="space-y-4">
-      {/* Current user's total balance */}
       <div className="text-center pb-4 border-b">
         <p className="text-sm text-muted-foreground mb-1">Your balance</p>
         <p
