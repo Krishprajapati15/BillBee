@@ -8,7 +8,6 @@ import { ArrowUpCircle, ArrowDownCircle } from "lucide-react";
 export function GroupBalances({ balances }) {
   const { data: currentUser } = useConvexQuery(api.users.getCurrentUser);
 
-  /* ───── guards ────────────────────────────────────────────────────────── */
   if (!balances?.length || !currentUser) {
     return (
       <div className="text-center py-4 text-muted-foreground">
