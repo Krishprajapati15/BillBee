@@ -75,7 +75,7 @@ export function GroupBalances({ balances }) {
         </div>
       ) : (
         <div className="space-y-4">
-          {/* People who owe the current user */}
+          
           {owedByMembers.length > 0 && (
             <div>
               <h3 className="text-sm font-medium flex items-center mb-3">
