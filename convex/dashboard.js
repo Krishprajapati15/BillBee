@@ -99,7 +99,6 @@ export const getTotalSpent = query({
       .withIndex("by_date", (q) => q.gte("date", startOfYear))
       .collect();
 
-    // Filter for expenses where user is involved
     const userExpenses = expenses.filter(
       (expense) =>
         expense.paidByUserId === user._id ||
