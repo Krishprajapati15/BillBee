@@ -3,14 +3,10 @@ import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 import { internal } from "./_generated/api";
 
-/* ──────────────────────────────────────────────────────────────────────────
-   1. getAllContacts – 1‑to‑1 expense contacts + groups
-   ──────────────────────────────────────────────────────────────────────── */
 export const getAllContacts = query({
   handler: async (ctx) => {
     const currentUser = await ctx.runQuery(internal.users.getCurrentUser);
 
-    /* ── personal expenses where YOU are the payer ─────────────────────── */
     const expensesYouPaid = await ctx.db
       .query("expenses")
       .withIndex("by_user_and_group", (q) =>
@@ -18,7 +14,6 @@ export const getAllContacts = query({
       )
       .collect();
 
-    /* ── personal expenses where YOU are **not** the payer ─────────────── */
     const expensesNotPaidByYou = (
       await ctx.db
         .query("expenses")
