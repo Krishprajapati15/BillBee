@@ -8,7 +8,6 @@ import { internal } from "./_generated/api";
    ──────────────────────────────────────────────────────────────────────── */
 export const getAllContacts = query({
   handler: async (ctx) => {
-    // Use the centralized getCurrentUser instead of duplicating auth logic
     const currentUser = await ctx.runQuery(internal.users.getCurrentUser);
 
     /* ── personal expenses where YOU are the payer ─────────────────────── */
