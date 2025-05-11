@@ -27,7 +27,6 @@ export function SettlementList({
     );
   }
 
-  // Helper to get user details from cache or look up
   const getUserDetails = (userId) => {
     // Simplified fallback
     return {
