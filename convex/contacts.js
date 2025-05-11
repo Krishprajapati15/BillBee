@@ -62,7 +62,6 @@ export const getAllContacts = query({
         type: "group",
       }));
 
-    /* sort alphabetically */
     contactUsers.sort((a, b) => a?.name.localeCompare(b?.name));
     userGroups.sort((a, b) => a.name.localeCompare(b.name));
 
