@@ -17,7 +17,7 @@ export const getAllContacts = query({
     const expensesNotPaidByYou = (
       await ctx.db
         .query("expenses")
-        .withIndex("by_group", (q) => q.eq("groupId", undefined)) // only 1‑to‑1
+        .withIndex("by_group", (q) => q.eq("groupId", undefined))
         .collect()
     ).filter(
       (e) =>
