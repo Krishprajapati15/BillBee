@@ -55,7 +55,6 @@ export function SettlementList({
             <CardContent className="py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  {/* Settlement icon */}
                   <div className="bg-primary/10 p-2 rounded-full">
                     <ArrowLeftRight className="h-5 w-5 text-primary" />
                   </div>
