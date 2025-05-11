@@ -105,7 +105,7 @@ export const getTotalSpent = query({
         expense.splits.some((split) => split.userId === user._id)
     );
 
-    // Calculate total spent (personal share only)
+    // (personal share only)
     let totalSpent = 0;
 
     userExpenses.forEach((expense) => {
