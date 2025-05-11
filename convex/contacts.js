@@ -52,7 +52,6 @@ export const getAllContacts = query({
       })
     );
 
-    /* ── groups where current user is a member ─────────────────────────── */
     const userGroups = (await ctx.db.query("groups").collect())
       .filter((g) => g.members.some((m) => m.userId === currentUser._id))
       .map((g) => ({
