@@ -27,7 +27,6 @@ export const getAllContacts = query({
 
     const personalExpenses = [...expensesYouPaid, ...expensesNotPaidByYou];
 
-    /* ── extract unique counterpart IDs ─────────────────────────────────── */
     const contactIds = new Set();
     personalExpenses.forEach((exp) => {
       if (exp.paidByUserId !== currentUser._id)
