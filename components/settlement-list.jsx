@@ -28,7 +28,6 @@ export function SettlementList({
   }
 
   const getUserDetails = (userId) => {
-    // Simplified fallback
     return {
       name:
         userId === currentUser?._id
