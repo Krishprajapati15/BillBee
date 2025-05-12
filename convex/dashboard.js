@@ -128,7 +128,6 @@ export const getMonthlySpending = query({
     const currentYear = new Date().getFullYear();
     const startOfYear = new Date(currentYear, 0, 1).getTime();
 
-    // Get all expenses for current year
     const allExpenses = await ctx.db
       .query("expenses")
       .withIndex("by_date", (q) => q.gte("date", startOfYear))
