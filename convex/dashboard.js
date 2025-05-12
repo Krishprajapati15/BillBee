@@ -142,7 +142,6 @@ export const getMonthlySpending = query({
     // Group expenses by month
     const monthlyTotals = {};
 
-    // Initialize all months with zero
     for (let i = 0; i < 12; i++) {
       const monthDate = new Date(currentYear, i, 1);
       monthlyTotals[monthDate.getTime()] = 0;
