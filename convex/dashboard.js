@@ -147,7 +147,6 @@ export const getMonthlySpending = query({
       monthlyTotals[monthDate.getTime()] = 0;
     }
 
-    // Sum up expenses by month
     userExpenses.forEach((expense) => {
       const date = new Date(expense.date);
       const monthStart = new Date(
